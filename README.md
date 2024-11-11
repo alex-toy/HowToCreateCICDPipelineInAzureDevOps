@@ -1,18 +1,27 @@
 # How to Create a CI/CD Pipeline in Azure DevOps
 
-## Environment
+## Run Local
 
-### Virtual Machine
+- build
+```
+dotnet restore
+dotnet build --no-restore --configuration release
+```
+
+- publish : publishes the application and its dependencies to a folder for deployment to a hosting system.
+```
+dotnet publish --no-build --configuration release
+```
 
 - run local
 ```
-dotnet build --no-restore --configuration release
 cd HelloWorldApp\HelloWorldApp
 dotnet bin\Debug\net6.0\HelloWorldApp.dll
 ```
 
+## Create Pipeline
 
+- choose : use the classic editor
 
-
-
-<img src="/pictures/ubuntu.png" title="putty"  width="900">
+- choose ASP.NET Core
+<img src="/pictures/pipeline.png" title="pipeline"  width="900">
